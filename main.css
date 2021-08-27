@@ -15,13 +15,24 @@ body {
   height: auto;
   background-color: plum;
 }
+#background {
+  opacity:0;
+}
+.fadeInImage {
+  animation: fadeIn ease-in 2s forwards;
+}
+
+@keyframes fadeIn {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
 /* start text */
 .flexing {
   display:flex;
 }
 #startText {
   color: white;
- /* display: flex;*/
   position: absolute;
   flex-direction: column;
   align-items: center;

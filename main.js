@@ -16,7 +16,7 @@ function startGame(e){
 
 window.onload = (e) => {
   window.addEventListener('resize', setGameContainer);
-  addEvent('gameContainer', 'click', startGame)
   setGameContainer()
+  addEvent('gameContainer', 'click', startGame)
   e.preventDefault()
 }
