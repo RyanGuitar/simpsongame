@@ -12,6 +12,12 @@ const gameContainerTracker = {
       width: 0,
     }
   }
+
+  let fullscreenSet = false;
+
+  function setFullscreenFlag(){
+      fullscreenSet = true;
+  }
   
   function applyGameContainerSize(id, width, height) {
     getId(id).style.height = height;
@@ -19,6 +25,7 @@ const gameContainerTracker = {
   }
   
   function setGameContainerSize() {
+    //  console.log('setting game container size')
     let {
       portrait,
       landscape
@@ -32,17 +39,34 @@ const gameContainerTracker = {
       applyGameContainerSize('background', 'auto', landscape.height)
     }
     getId('background').classList.remove('hide')
+    if(fullscreenSet){
+        getId('background').style.opacity = 1;
+    }
   }
   
   function setGameContainer() {
     if (gameContainerTracker.portrait.height == 0 || gameContainerTracker.landscape.height == 0) {
-      if (window.innerWidth < window.innerHeight && gameContainerTracker.portrait.height == 0) {
-        gameContainerTracker.portrait.height = window.innerHeight + "px";
-        gameContainerTracker.portrait.width = window.innerWidth + "px";
+      if(!fullscreenSet){
+       //   console.log('fullscreen not set')
+        if (window.innerWidth < window.innerHeight && gameContainerTracker.portrait.height == 0) {
+            gameContainerTracker.portrait.height = window.innerHeight + "px";
+            gameContainerTracker.portrait.width = window.innerWidth + "px";
+        }
+        if (window.innerWidth > window.innerHeight && gameContainerTracker.landscape.height == 0) {
+            gameContainerTracker.landscape.height = window.innerHeight + "px";
+            gameContainerTracker.landscape.width = window.innerWidth + "px";
+        }
       }
-      if (window.innerWidth > window.innerHeight && gameContainerTracker.landscape.height == 0) {
-        gameContainerTracker.landscape.height = window.innerHeight + "px";
-        gameContainerTracker.landscape.width = window.innerWidth + "px";
+      if(fullscreenSet){
+          console.log('fullscreen set')
+      /*  if (window.innerWidth < window.innerHeight && gameContainerTracker.portrait.height == 0) {
+         //   gameContainerTracker.portrait.height = window.screen.availHeight + "px";
+         //   gameContainerTracker.portrait.width = window.screen.availWidth + "px";
+        }*/
+        if (window.innerWidth > window.innerHeight && gameContainerTracker.landscape.height == 0) {
+            gameContainerTracker.landscape.height = window.screen.availHeight + "px";
+            gameContainerTracker.landscape.width = window.screen.availWidth + "px";
+        }  
       }
     }
     setGameContainerSize()
@@ -50,4 +74,5 @@ const gameContainerTracker = {
 
   export {
       setGameContainer,
+      setFullscreenFlag,
   }

@@ -6,4 +6,5 @@ export {
 } from './helpers.js'
 export {
   setGameContainer,
+  setFullscreenFlag,
 } from './gameContainerTracker.js'
