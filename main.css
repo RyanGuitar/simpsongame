@@ -1,0 +1,19 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+  width: 100vw;
+  height: auto;
+}
+
+.hide {
+  display: none;
+}
+
+#gameContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: auto;
+  background-color: plum;
+}
