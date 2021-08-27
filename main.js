@@ -1,4 +1,3 @@
-
 import {
   getId,
 } from './terminal.js'
@@ -14,7 +13,7 @@ const gameContainerTracker = {
   }
 }
 
-function applyGameContainerSize(id, width, height){
+function applyGameContainerSize(id, width, height) {
   getId(id).style.height = height;
   getId(id).style.width = width;
 }
