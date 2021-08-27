@@ -1,6 +1,7 @@
 body {
   margin: 0;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .hide {
@@ -15,25 +16,19 @@ body {
   height: auto;
   background-color: plum;
 }
-#background {
-  opacity:0;
-}
-.fadeInImage {
-  animation: fadeIn ease-in 2s forwards;
-}
 
-@keyframes fadeIn {
-  0% {opacity:0;}
-  100% {opacity:1;}
+#background {
+  overflow: hidden;
 }
 
 /* start text */
 .flexing {
-  display:flex;
+  display: flex;
 }
+
 #startText {
   color: white;
-  width:100vw;
+  width: 100vw;
   position: absolute;
   flex-direction: column;
   align-items: center;

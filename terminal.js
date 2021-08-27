@@ -2,9 +2,11 @@ export {
   getId,
   removeAddClasses,
   removeEvent,
+  addClass,
   addEvent,
-} from './helpers.js'
+}
+from './helpers.js'
 export {
   setGameContainer,
-  setFullscreenFlag,
-} from './gameContainerTracker.js'
+}
+from './gameContainerTracker.js'

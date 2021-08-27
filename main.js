@@ -2,39 +2,22 @@ import {
   removeAddClasses,
   setGameContainer,
   removeEvent,
+  addClass,
   addEvent,
-  setFullscreenFlag,
-  getId,
 } from './terminal.js'
 
-function addClass(id, add){
-  getId(id).classList.add(add)
-}
-
-
 function requestFullscreenMode() {
- // if (!document.fullscreenElement) {
-
-    
-    document.documentElement.requestFullscreen();
-    setFullscreenFlag()
-    removeAddClasses('background', 'fadeInImage', 'hide')
-   // addClass('background', 'hide')
-    setGameContainer()
-  //  console.log(window.innerHeight)
-  //  console.log(window.screen.availHeight)
-    
- // }
+  document.documentElement.requestFullscreen();
+  addClass('background', 'hide')
+  setGameContainer()
 }
 
-
-
-function startGame(e){
-  if(e.target.id === 'title' || e.target.id === 'start'){
+function startGame(e) {
+  if (e.target.id === 'title' || e.target.id === 'start') {
     removeAddClasses('startText', 'flexing', 'hide')
     removeEvent('gameContainer', 'click', startGame)
     requestFullscreenMode()
-  } 
+  }
 }
 
 window.onload = (e) => {
