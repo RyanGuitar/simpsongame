@@ -15,3 +15,25 @@ body {
   height: auto;
   background-color: plum;
 }
+/* start text */
+.flexing {
+  display:flex;
+}
+#startText {
+  color: white;
+ /* display: flex;*/
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#title {
+  font-size: 5vw;
+  text-shadow: 2px 2px plum;
+}
+
+#start {
+  font-size: 3vw;
+  text-align: center;
+}
