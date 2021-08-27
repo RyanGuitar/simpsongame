@@ -59,10 +59,10 @@ const gameContainerTracker = {
       }
       if(fullscreenSet){
           console.log('fullscreen set')
-      /*  if (window.innerWidth < window.innerHeight && gameContainerTracker.portrait.height == 0) {
-         //   gameContainerTracker.portrait.height = window.screen.availHeight + "px";
+        if (window.innerWidth < window.innerHeight && gameContainerTracker.portrait.height == 0) {
+          gameContainerTracker.portrait.height = window.screen.availHeight + "px";
          //   gameContainerTracker.portrait.width = window.screen.availWidth + "px";
-        }*/
+        }
         if (window.innerWidth > window.innerHeight && gameContainerTracker.landscape.height == 0) {
             gameContainerTracker.landscape.height = window.screen.availHeight + "px";
             gameContainerTracker.landscape.width = window.screen.availWidth + "px";
