@@ -15,6 +15,7 @@ function requestFullscreenMode() {
 function startGame(e) {
   if (e.target.id === 'title' || e.target.id === 'start') {
     removeAddClasses('startText', 'flexing', 'hide')
+    addClass('startHomer', 'hide')
     removeEvent('gameContainer', 'click', startGame)
     requestFullscreenMode()
   }

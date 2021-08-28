@@ -20,7 +20,13 @@ body {
   background-color: plum;
 }
 
-#homer {
+#startHomer {
+  overflow:hidden;
+  position:absolute;
+  width:auto;
+}
+#bart {
+  overflow:hidden;
   position:absolute;
   width:auto;
 }
