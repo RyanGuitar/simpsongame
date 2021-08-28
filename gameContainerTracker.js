@@ -34,12 +34,12 @@ function setGameContainerSize() {
     } = gameContainerTracker;
     if (window.innerWidth < window.innerHeight) {
         applyGameContainerSize('gameContainer', portrait.width, portrait.height)
-        applyGameContainerSize('backgroundContainer', portrait.width, 'auto')
+     //  applyGameContainerSize('backgroundContainer', portrait.width, 'auto')
         applyGameContainerSize('background', portrait.width, 'auto')
     }
     if (window.innerWidth > window.innerHeight) {
         applyGameContainerSize('gameContainer', landscape.width, landscape.height)
-        applyGameContainerSize('backgroundContainer', 'auto', landscape.height)
+     //   applyGameContainerSize('backgroundContainer', 'auto', landscape.height)
         applyGameContainerSize('background', 'auto', landscape.height)
     }
     getId('background').classList.remove('hide')
@@ -47,7 +47,9 @@ function setGameContainerSize() {
 
 function setGameContainer() {
     if (window.innerWidth < window.innerHeight) {
-        gameContainerTracker.portrait.height = window.innerHeight + "px";
+        gameContainerTracker.portrait.height = window.screen.availHeight + "px";
+        console.log(window.innerHeight)
+        console.log(window.screen.availHeight)
         gameContainerTracker.portrait.width = window.innerWidth + "px";
         imageSizeStandard = window.innerHeight/9 
     }
