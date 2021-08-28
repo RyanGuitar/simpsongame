@@ -20,6 +20,7 @@ function applyGameContainerSize(id, width, height) {
     let imageHeight = getId('homer').height
     getId('homer').style.left = (window.innerWidth/2) - (imageWidth/2) + "px"
     getId('homer').style.top = (window.innerHeight/2) - (imageHeight/2) + "px"
+    getId('homer').classList.remove('faded')
 }
 
 function setGameContainerSize() {
@@ -36,6 +37,7 @@ function setGameContainerSize() {
         applyGameContainerSize('background', 'auto', landscape.height)
     }
     getId('background').classList.remove('hide')
+    
 }
 
 function setGameContainer() {
