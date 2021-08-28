@@ -16,10 +16,10 @@ const gameContainerTracker = {
 let imageSizeStandard = '';
 
 function setImagePosition(){
-    getId('startHomer').style.left = (window.innerWidth/2) - (imageSizeStandard/2) + (imageSizeStandard) + "px"
-    getId('startHomer').style.top = (window.innerHeight/2) - (imageSizeStandard) + (imageSizeStandard * 0.495) + "px"
-    getId('startHomer').style.height = (imageSizeStandard * 2) + "px"
-    getId('startHomer').classList.remove('faded')
+    getId('homer').style.left = (window.innerWidth/2) - (imageSizeStandard/2) + (imageSizeStandard * 1.1) + "px"
+    getId('homer').style.top = (window.innerHeight/2) - (imageSizeStandard) + (imageSizeStandard/2.3) + "px"
+    getId('homer').style.height = (imageSizeStandard * 1.9) + "px"
+    getId('homer').classList.remove('faded')
 }
 
 function applyGameContainerSize(id, widthAdd, heightAdd) {
@@ -34,12 +34,10 @@ function setGameContainerSize() {
     } = gameContainerTracker;
     if (window.innerWidth < window.innerHeight) {
         applyGameContainerSize('gameContainer', portrait.width, portrait.height)
-     //  applyGameContainerSize('backgroundContainer', portrait.width, 'auto')
         applyGameContainerSize('background', portrait.width, 'auto')
     }
     if (window.innerWidth > window.innerHeight) {
         applyGameContainerSize('gameContainer', landscape.width, landscape.height)
-     //   applyGameContainerSize('backgroundContainer', 'auto', landscape.height)
         applyGameContainerSize('background', 'auto', landscape.height)
     }
     getId('background').classList.remove('hide')
@@ -47,9 +45,7 @@ function setGameContainerSize() {
 
 function setGameContainer() {
     if (window.innerWidth < window.innerHeight) {
-        gameContainerTracker.portrait.height = window.screen.availHeight + "px";
-        console.log(window.innerHeight)
-        console.log(window.screen.availHeight)
+        gameContainerTracker.portrait.height = window.innerHeight + "px";
         gameContainerTracker.portrait.width = window.innerWidth + "px";
         imageSizeStandard = window.innerHeight/9 
     }
