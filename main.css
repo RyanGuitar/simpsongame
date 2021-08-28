@@ -17,8 +17,9 @@ body {
   background-color: plum;
 }
 
-#background {
-  overflow: hidden;
+#homer {
+  position:absolute;
+  width:auto;
 }
 
 /* start text */
